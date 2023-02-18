@@ -1,5 +1,7 @@
 package sm.randomnumber;
 
+import sm.randomnumber.account.AddingMethods;
+
 public class Main {
     public static void main(String[] args) {
 

@@ -1,4 +1,4 @@
-package sm.randomnumber;
+package sm.randomnumber.account;
 
 import java.security.InvalidParameterException;
 import java.util.InputMismatchException;
@@ -12,21 +12,17 @@ public class AddingMethods {
         return blikCode;
     }
 
-    public void setBlikCode(int blikCode) {
-        this.blikCode = blikCode;
-    }
-
     Scanner scanner = new Scanner(System.in);
     Account account = new Account();
 
-    double setCashValue(){
+    public double setCashValue(){
         System.out.print("Maximum deposit amount is 1000" + System.lineSeparator()
                 + "Specify the amount to be paid: ");
         return scanner.nextDouble();
     }
 
 
-    boolean cashAddingMethodBlik(){
+    public boolean cashAddingMethodBlik(){
 
         boolean stop = true;
 
@@ -76,10 +72,24 @@ public class AddingMethods {
         return false;
     }
 
-    void cashAdding(boolean a, double b){
+    public void cashAdding(boolean a, double b){
         if (a){
-            account.setBalance(b);
+            account.setBalance(account.getBalance() + b);
+        }else{
+            System.out.println("Funds have not been added");
         }
+    }
+    public boolean cashAddingAfterGame(boolean a, double b){
+        if(a){
+            account.setBalance(account.getBalance() + b);
+            System.out.println("Congrats on the win: " + b);
+            return true;
+        }else{
+            account.setBalance(account.getBalance() - b);
+            System.out.println("I'm sorry you lost: ");
+            return false;
+        }
+
     }
 
 }

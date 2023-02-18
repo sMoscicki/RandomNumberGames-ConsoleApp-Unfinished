@@ -1,4 +1,4 @@
-package sm.randomnumber;
+package sm.randomnumber.randomnumgame;
 
 import java.util.Random;
 
